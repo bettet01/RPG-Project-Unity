@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172ae7a261cf05d449e03b9182b11e2a, type: 3}
+  m_Name: Black Helmet
+  m_EditorClassIdentifier: 
+  name: Helmet
+  icon: {fileID: 21300000, guid: e6933efe327ca1b469b67c8e9adda2ed, type: 3}
+  itemCount: 1
+  isDefaultItem: 0
+  cost: 0
+  equipSlot: 0
+  coveredMeshRegions: 
+  mesh: {fileID: 5327275007102979044, guid: 3f17b017f2cd6bc48bb48ee20e8f0448, type: 3}
+  healthModifier:
+    modifierNumber: 5
+    modifierType: 0
+  manaModifier:
+    modifierNumber: 0
+    modifierType: 0
+  strengthModifier:
+    modifierNumber: 0
+    modifierType: 0
+  defenseModifier:
+    modifierNumber: 0
+    modifierType: 0
+  dexterityModifier:
+    modifierNumber: 0
+    modifierType: 0
+  intelligenceModifier:
+    modifierNumber: 0
+    modifierType: 0

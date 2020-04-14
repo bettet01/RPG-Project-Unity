@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172ae7a261cf05d449e03b9182b11e2a, type: 3}
+  m_Name: Sword Of Light
+  m_EditorClassIdentifier: 
+  name: Sword Of Light
+  icon: {fileID: 21300000, guid: 3cf7216291278eb408eed1b6f78b8c95, type: 3}
+  itemCount: 1
+  isDefaultItem: 0
+  cost: 0
+  equipSlot: 3
+  coveredMeshRegions: 
+  mesh: {fileID: 669993903196006585, guid: 7b289bf13c9c0184caaf0f18b8fa11a7, type: 3}
+  healthModifier:
+    modifierNumber: 0
+    modifierType: 0
+  manaModifier:
+    modifierNumber: 0
+    modifierType: 0
+  strengthModifier:
+    modifierNumber: 100
+    modifierType: 0
+  defenseModifier:
+    modifierNumber: 0
+    modifierType: 0
+  dexterityModifier:
+    modifierNumber: 0
+    modifierType: 0
+  intelligenceModifier:
+    modifierNumber: 0
+    modifierType: 0
