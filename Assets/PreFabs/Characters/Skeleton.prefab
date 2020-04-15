@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &7190631813199433563
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219257924809437383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1e6a14872bdcdeb44838ded96e332baf, type: 3}
+  m_Controller: {fileID: 9100000, guid: 8cee37383517361438f48ce50c8382ac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7190631813058849435
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +51,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7190631813058849435}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8215246, y: 0.17931509, z: -12.475229}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -134,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73675f76b29fabb448c9aa253e2734b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterName: 
   coins: 150
   level: 0
   maxHealth: 100
@@ -154,10 +174,9 @@ MonoBehaviour:
   intelligence:
     baseValue: 0
     modifiers: 
-  Dropitems:
-  - {fileID: 2293172340249680219, guid: 6bf9601ac7b358f45aae268ad64ce4d2, type: 3}
-  - {fileID: 7449673327482394531, guid: 59e876cb13dc2f1479a6ac204627b2b1, type: 3}
+  Dropitems: []
   radius: 0.5
+  spawnManager: {fileID: 0}
 --- !u!114 &7190631813058849427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,25 +222,6 @@ MonoBehaviour:
   - {fileID: -47757044105611666, guid: 1e6a14872bdcdeb44838ded96e332baf, type: 3}
   - {fileID: 8416408570801230831, guid: 1e6a14872bdcdeb44838ded96e332baf, type: 3}
   OverrideController: {fileID: 22100000, guid: 3b558a95928ebcc44b9f07d0df144c0b, type: 2}
---- !u!95 &7190631813199433563
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219257924809437383}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1e6a14872bdcdeb44838ded96e332baf, type: 3}
-  m_Controller: {fileID: 9100000, guid: 8cee37383517361438f48ce50c8382ac, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7190631813281608136
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Black Shield
   m_EditorClassIdentifier: 
   name: Shield
-  icon: {fileID: 21300000, guid: db3066122b902d841aeb8474c2f2da62, type: 3}
+  icon: {fileID: 21300000, guid: ea28bc9122fcddd4f9aafe538ce51ff7, type: 3}
   itemCount: 1
   isDefaultItem: 0
   cost: 0
   equipSlot: 4
   coveredMeshRegions: 
-  mesh: {fileID: 4139955034538067132, guid: 780f22c829523c744a91ba4a18124978, type: 3}
+  mesh: {fileID: -2953468392063532210, guid: d9690465d6e09af49881506dabdbf9dd, type: 3}
   healthModifier:
     modifierNumber: 0
     modifierType: 0

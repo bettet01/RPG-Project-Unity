@@ -6,6 +6,7 @@ public class EnemyStats : CharacterStats
 {
     public List<GameObject> Dropitems;
     public float radius;
+    public Spawner spawnManager;
     public override void Die()
     {
         base.Die();
@@ -13,6 +14,7 @@ public class EnemyStats : CharacterStats
         PlayerManager.instance.player.GetComponent<PlayerStats>().coins += gameObject.GetComponent<CharacterStats>().coins;
         PlayerManager.instance.player.GetComponent<PlayerStats>().addExp(gameObject.GetComponent<CharacterStats>().currentExp);
         Destroy(gameObject);
+        spawnManager.enemylist.Remove(gameObject);
         // add loot
         foreach (GameObject pickupItem in Dropitems)
         {

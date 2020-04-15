@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Black PlateLegs
   m_EditorClassIdentifier: 
   name: Black Plate Legs
-  icon: {fileID: 21300000, guid: 28c833755e07898429298723f29a0751, type: 3}
+  icon: {fileID: 21300000, guid: f32311fdf29118944bfb716d08a467cb, type: 3}
   itemCount: 1
   isDefaultItem: 0
   cost: 0

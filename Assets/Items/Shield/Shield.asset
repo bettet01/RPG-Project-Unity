@@ -19,7 +19,7 @@ MonoBehaviour:
   cost: 0
   equipSlot: 4
   coveredMeshRegions: 
-  mesh: {fileID: 4139955034538067132, guid: 6f0d643deb1217a4f9d877db3a0a06fc, type: 3}
+  mesh: {fileID: 4139955034538067132, guid: 80993e46a4c06cf40b0785afadef3416, type: 3}
   healthModifier:
     modifierNumber: 0
     modifierType: 0
