@@ -18,7 +18,8 @@ public class EnemyStats : CharacterStats
         // add loot
         foreach (GameObject pickupItem in Dropitems)
         {
-            Instantiate(pickupItem, new Vector3(transform.position.x + Random.Range(-radius,radius), transform.position.y, transform.position.z + Random.Range(-radius, radius)), Quaternion.identity);
+            Instantiate(pickupItem, new Vector3(transform.position.x + Random.Range(-radius,radius), transform.position.y + .2f, transform.position.z + Random.Range(-radius, radius)), Quaternion.identity);
         }
     }
 }
+ 

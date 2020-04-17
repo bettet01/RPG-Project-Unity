@@ -28,6 +28,8 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
+
+
     public bool Add(Item item) {
         if (!item.isDefaultItem)
         {

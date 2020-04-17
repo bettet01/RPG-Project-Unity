@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
                 for(int i =0; i < dropables.Count; i++)
                 {
                     int chance = Random.Range(0, 100);
-                    if(chance > itemChance * 100)
+                    if(chance < itemChance * 100)
                     {
                         newEnemy.GetComponent<EnemyStats>().Dropitems.Add(dropables[i]);
                     }

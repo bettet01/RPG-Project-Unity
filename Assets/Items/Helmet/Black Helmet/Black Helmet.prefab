@@ -140,6 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71785833a295ab144a8764c7914abe84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.4
+  radius: 0.6
   interactionTransform: {fileID: 1725083904410492922}
   item: {fileID: 11400000, guid: b2488bb4204f08a4cb9f8de14750563f, type: 2}

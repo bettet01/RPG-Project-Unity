@@ -156,14 +156,14 @@ MonoBehaviour:
   CharacterName: 
   coins: 150
   level: 0
-  maxHealth: 100
-  currentHealth: 0
+  maxHealth: 40
+  currentHealth: 40
   maxMana: 0
   currentMana: 0
   maxExp: 0
   currentExp: 60
   strength:
-    baseValue: 5
+    baseValue: 10
     modifiers: 
   defense:
     baseValue: 0

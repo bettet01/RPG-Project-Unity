@@ -23,9 +23,6 @@ public class CharacterStats : MonoBehaviour
 
     private void Awake()
     {
-        currentHealth = maxHealth;
-        currentMana = maxMana;
-        strength.SetValue(5);
     }
 
     public void Update()
