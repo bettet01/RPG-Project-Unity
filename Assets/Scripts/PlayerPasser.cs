@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerPasser : MonoBehaviour
 {
-    public List<string> equipmentnames;
+    public List<Equipment> equipmentlist;
     public List<Item> itemlist;
 
     public int playerid;

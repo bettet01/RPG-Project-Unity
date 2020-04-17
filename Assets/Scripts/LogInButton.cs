@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -46,16 +47,35 @@ public class LogInButton : MonoBehaviour
                 if (pieces[i].Contains("equipmentname"))
                 {
                     string[] temp = pieces[i].Split(':');
-                    playerPasser.equipmentnames.Add(temp[1].Substring(1,temp[1].Length-4));
+                    try
+                    {
+                        Equipment next = (Equipment)Instantiate(Resources.Load(temp[1].Substring(1, temp[1].Length - 3)));
+                        playerPasser.equipmentlist.Add(next);
+                    }
+                    catch (ArgumentException)
+                    {
+                        Equipment next = (Equipment)Instantiate(Resources.Load(temp[1].Substring(1, temp[1].Length - 4)));
+                        playerPasser.equipmentlist.Add(next);
+                    }
 
                 }
                 if (pieces[i].Contains("itemname"))
                 {
                     string[] temp3 = pieces[i].Split(':');
                     string[] temp2 = pieces[i + 1].Split(':');
-                    Item next = (Item)Instantiate(Resources.Load(temp3[1].Substring(1, temp3[1].Length-2)));
-                    next.itemCount = int.Parse(temp2[1].Substring(0, temp2[1].Length - 3));
-                    playerPasser.itemlist.Add(next);
+                    try
+                    {
+                        Item next = (Item)Instantiate(Resources.Load(temp3[1].Substring(1, temp3[1].Length - 2)));
+                        next.itemCount = int.Parse(temp2[1].Substring(0, temp2[1].Length - 3));
+                        playerPasser.itemlist.Add(next);
+                    }
+                    catch (System.Exception)
+                    {
+                        Item next = (Item)Instantiate(Resources.Load(temp3[1].Substring(1, temp3[1].Length - 3)));
+                        next.itemCount = int.Parse(temp2[1].Substring(0, temp2[1].Length - 3));
+                        playerPasser.itemlist.Add(next);
+                    }
+
                 }
             }
 

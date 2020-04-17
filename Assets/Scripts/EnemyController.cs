@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector3.Distance(target.position, this.transform.position);
 
         if(distance <= lookRadius)
         {

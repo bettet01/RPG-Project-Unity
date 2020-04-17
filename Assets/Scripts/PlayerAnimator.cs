@@ -4,27 +4,27 @@ using UnityEngine;
 public class PlayerAnimator : CharacterAnimator
 {
     public WeaponAnimations[] weaponAnimations;
-    Dictionary<Equipment, AnimationClip[]> weaponAnimationDictonary;
+    Dictionary<string, AnimationClip[]> weaponAnimationDictonary;
     protected override void Start()
     {
         base.Start();
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
 
-        weaponAnimationDictonary = new Dictionary<Equipment, AnimationClip[]>();
+        weaponAnimationDictonary = new Dictionary<string, AnimationClip[]>();
         foreach (WeaponAnimations a in weaponAnimations)
         {
-            weaponAnimationDictonary.Add(a.weapon, a.clips);
+            weaponAnimationDictonary.Add(a.weapon.name, a.clips);
         }
     }
 
-    void OnEquipmentChanged(Equipment newitem, Equipment oldItem)
+    public void OnEquipmentChanged(Equipment newitem, Equipment oldItem)
     {
         if(newitem != null && newitem.equipSlot == EquipmentSlot.Weapon)
         {
             animator.SetLayerWeight(1, 1);
-            if (weaponAnimationDictonary.ContainsKey(newitem))
+            if (weaponAnimationDictonary.ContainsKey(newitem.name))
             {
-                currentAttackAnimationSet = weaponAnimationDictonary[newitem];
+                currentAttackAnimationSet = weaponAnimationDictonary[newitem.name];
             }
         } else if( newitem == null && oldItem != null && oldItem.equipSlot == EquipmentSlot.Weapon)
         {

@@ -5247,9 +5247,9 @@ MonoBehaviour:
   - {fileID: 4413732149576646417, guid: 0daf1b6f8744d9a499566a5533a32ffa, type: 3}
   - {fileID: 4379931545498421892, guid: 8629d26deeae4a3478b74c14566f66c4, type: 3}
   spawnTransform: {fileID: 1178336621}
-  enemyMaxCount: 5
-  respawnTime: 10
-  itemChance: 0.15
+  enemyMaxCount: 15
+  respawnTime: 7
+  itemChance: 0.07
 --- !u!4 &1178336621
 Transform:
   m_ObjectHideFlags: 0
@@ -6075,6 +6075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2056009544}
+  saveTime: 30
 --- !u!4 &1342345813
 Transform:
   m_ObjectHideFlags: 0
@@ -9296,6 +9297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38aa65742192854c9ea8b66ed17498c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   CharacterName: Overwrite This
   coins: 300
   level: 1

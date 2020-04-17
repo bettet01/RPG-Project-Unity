@@ -41,6 +41,11 @@ public class Stat
         }
     }
 
+    public int GetBaseValue()
+    {
+        return baseValue;
+    }
+
     public int GetValue()
     {
         int finalValue = baseValue;

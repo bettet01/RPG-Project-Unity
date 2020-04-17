@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    public int id;
     public String CharacterName;
     public int coins;
     public int level = 1;
