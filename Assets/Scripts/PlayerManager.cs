@@ -111,7 +111,7 @@ public class PlayerManager : MonoBehaviour
         }
 
         saveData = saveData.Substring(0, saveData.Length - 1);
-        saveData += "], \"inventoryitems\": [";
+        saveData += "], \"inventoryitems\": [ ";
 
         foreach(Item item in inventory.items)
         {

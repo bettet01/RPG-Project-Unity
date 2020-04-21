@@ -14,7 +14,7 @@ public class LogInButton : MonoBehaviour
     public List<string> character;
 
 
-    private string API = "localhost:8080/api/users/user";
+    private string API = "http://localhost:8080/api/users/user";
     public void ValidateUser()
     {
         API += "?email=" + email.text + "&password=" + password.text;
@@ -33,7 +33,7 @@ public class LogInButton : MonoBehaviour
                 // TODO: write error handling
                 yield break;
             }
-
+            Debug.Log(webRequest.downloadHandler.text);
             string[] pieces = webRequest.downloadHandler.text.Split(',');
 
             for (int i = 0; i < 14; i++)
@@ -63,19 +63,21 @@ public class LogInButton : MonoBehaviour
                 {
                     string[] temp3 = pieces[i].Split(':');
                     string[] temp2 = pieces[i + 1].Split(':');
+
                     try
                     {
-                        Item next = (Item)Instantiate(Resources.Load(temp3[1].Substring(1, temp3[1].Length - 2)));
-                        next.itemCount = int.Parse(temp2[1].Substring(0, temp2[1].Length - 3));
+                        Debug.Log(temp3[0] + " " + temp3[1]);
+                        Item next = (Item)Instantiate(Resources.Load(temp3[1].Replace("\"", "")));
+                        next.itemCount = int.Parse(temp2[1].Substring(0, temp2[1].Length - 1));
                         playerPasser.itemlist.Add(next);
                     }
-                    catch (System.Exception)
+                catch (System.Exception)
                     {
-                        Item next = (Item)Instantiate(Resources.Load(temp3[1].Substring(1, temp3[1].Length - 3)));
+                        Debug.Log(temp2[1].Substring(0, temp2[1].Length - 2));
+                        Item next = (Item)Instantiate(Resources.Load(temp3[1].Replace("\"", "")));
                         next.itemCount = int.Parse(temp2[1].Substring(0, temp2[1].Length - 3));
                         playerPasser.itemlist.Add(next);
                     }
-
                 }
             }
 
