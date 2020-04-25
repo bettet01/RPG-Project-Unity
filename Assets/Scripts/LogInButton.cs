@@ -5,33 +5,39 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LogInButton : MonoBehaviour
 {
     public PlayerPasser playerPasser;
     public TextMeshProUGUI email;
-    public TextMeshProUGUI password;
+    public TMP_InputField password;
+    public TextMeshProUGUI errorBox;
     public List<string> character;
+    public bool status;
 
 
-    private string API = "http://localhost:8080/api/users/user";
+    private string API = "http://localhost:8080/api/users/player";
     public void ValidateUser()
     {
-        API += "?email=" + email.text + "&password=" + password.text;
+         StartCoroutine(GetRequest(API));
 
-        StartCoroutine(GetRequest(API));
     }
 
     IEnumerator GetRequest(string uri)
     {
+        character.RemoveRange(0, character.Count);
+        errorBox.text = "";
+        uri += "?email=" + email.text + "&password=" + password.text;
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
+
             yield return webRequest.SendWebRequest();
 
             if (webRequest.isHttpError)
             {
-                // TODO: write error handling
-                yield break;
+                errorBox.text = "Incorrect Email or Password";
+                yield return false;
             }
             Debug.Log(webRequest.downloadHandler.text);
             string[] pieces = webRequest.downloadHandler.text.Split(',');
@@ -97,7 +103,7 @@ public class LogInButton : MonoBehaviour
             playerPasser.dexterity = int.Parse(character[12]);
             playerPasser.intelligence = int.Parse(character[13]);
 
-
+            webRequest.Dispose();
             SceneManager.LoadScene("Main", LoadSceneMode.Single);
         }
     }

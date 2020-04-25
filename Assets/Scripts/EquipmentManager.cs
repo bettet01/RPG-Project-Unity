@@ -9,8 +9,11 @@ public class EquipmentManager : MonoBehaviour
     public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
     public OnEquipmentChanged onEquipmentChanged;
 
-    public Transform shield;
-    public Transform sword;
+    public MeshFilter shieldmesh;
+    public MeshFilter swordmesh;
+
+    public MeshRenderer shieldRenderer;
+    public MeshRenderer swordRenderer;
 
     #region Singleton
     public static EquipmentManager instance;
@@ -68,11 +71,21 @@ public class EquipmentManager : MonoBehaviour
 
         if (newItem != null && newItem.equipSlot == EquipmentSlot.Weapon)
         {
-            newMesh.rootBone = sword;
+            /*            newMesh.transform.parent = targetMesh.transform;
+                        newMesh.bones = targetMesh.bones;
+                        newMesh.rootBone = sword;*/
+
+            swordmesh.mesh = newMesh.sharedMesh;
+            swordRenderer.materials = newMesh.sharedMaterials;
         }
         else if (newItem != null && newItem.equipSlot == EquipmentSlot.Shield)
         {
-            newMesh.rootBone = shield;
+            /*newMesh.transform.parent = targetMesh.transform;
+            newMesh.bones = targetMesh.bones;
+            newMesh.rootBone = shield;*/
+
+            shieldmesh.mesh = newMesh.sharedMesh;
+            shieldRenderer.materials = newMesh.sharedMaterials;
         }
         else
         {
@@ -86,7 +99,17 @@ public class EquipmentManager : MonoBehaviour
     {
         if(currentEquipment[slotIndex] != null)
         {
-            if(currentMeshes[slotIndex] != null)
+            if (currentEquipment[slotIndex].equipSlot == EquipmentSlot.Weapon)
+            {
+
+                swordmesh.mesh = null;
+            }
+            else if (currentEquipment[slotIndex].equipSlot == EquipmentSlot.Shield)
+            {
+
+                shieldmesh.mesh = null;
+            }
+            if (currentMeshes[slotIndex] != null)
             {
 
                 Destroy(currentMeshes[slotIndex].gameObject);
